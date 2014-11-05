@@ -1,0 +1,302 @@
+{
+  "kind": "compute#network",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+  "id": "11776533652314944083",
+  "creationTimestamp": "2014-10-25T17:39:55.403-07:00",
+  "name": "default",
+  "description": "Default network for the project",
+  "IPv4Range": "10.240.0.0/16",
+  "gatewayIPv4": "10.240.0.1"
+}
+{
+  "kind": "compute#firewallList",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls",
+  "id": "projects/turnifi/global/firewalls",
+  "items": [
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/default-allow-http",
+      "id": "15023301234008907305",
+      "creationTimestamp": "2014-10-26T13:22:14.698-07:00",
+      "name": "default-allow-http",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "targetTags": [
+        "http-server"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "80"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/default-allow-https",
+      "id": "13909535549238738088",
+      "creationTimestamp": "2014-10-26T13:22:27.409-07:00",
+      "name": "default-allow-https",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "targetTags": [
+        "https-server"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "443"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/default-allow-icmp",
+      "id": "9179695738616422543",
+      "creationTimestamp": "2014-10-25T17:40:00.209-07:00",
+      "name": "default-allow-icmp",
+      "description": "Allow ICMP from anywhere",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "icmp"
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/default-allow-internal",
+      "id": "7473669663638729966",
+      "creationTimestamp": "2014-10-25T17:39:57.232-07:00",
+      "name": "default-allow-internal",
+      "description": "Allow internal traffic on the default network",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "10.240.0.0/16"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "1-65535"
+          ]
+        },
+        {
+          "IPProtocol": "udp",
+          "ports": [
+            "1-65535"
+          ]
+        },
+        {
+          "IPProtocol": "icmp"
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/default-allow-rdp",
+      "id": "8359896331529416794",
+      "creationTimestamp": "2014-10-25T17:39:59.209-07:00",
+      "name": "default-allow-rdp",
+      "description": "Allow RDP from anywhere",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "3389"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/default-allow-ssh",
+      "id": "14235473227877556517",
+      "creationTimestamp": "2014-10-25T17:39:58.216-07:00",
+      "name": "default-allow-ssh",
+      "description": "Allow SSH from anywhere",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "22"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/http1",
+      "id": "12079333617066016718",
+      "creationTimestamp": "2014-10-28T17:30:53.702-07:00",
+      "name": "http1",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "80"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/k8s-turb-master-https",
+      "id": "13172938979391106143",
+      "creationTimestamp": "2014-11-04T18:09:27.711-08:00",
+      "name": "k8s-turb-master-https",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "0.0.0.0/0"
+      ],
+      "targetTags": [
+        "k8s-turb-master"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp",
+          "ports": [
+            "443"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#firewall",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/firewalls/k8s-turb-node-1-all",
+      "id": "10551267406985885445",
+      "creationTimestamp": "2014-11-04T18:09:27.550-08:00",
+      "name": "k8s-turb-node-1-all",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "sourceRanges": [
+        "10.206.1.0/24"
+      ],
+      "targetTags": [
+        "k8s-turb-node"
+      ],
+      "allowed": [
+        {
+          "IPProtocol": "tcp"
+        },
+        {
+          "IPProtocol": "udp"
+        },
+        {
+          "IPProtocol": "icmp"
+        },
+        {
+          "IPProtocol": "esp"
+        },
+        {
+          "IPProtocol": "ah"
+        },
+        {
+          "IPProtocol": "sctp"
+        }
+      ]
+    }
+  ]
+}
+{
+  "kind": "compute#routeList",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/routes",
+  "id": "projects/turnifi/global/routes",
+  "items": [
+    {
+      "kind": "compute#route",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/routes/default-route-03d8a03a32937668",
+      "id": "12133424374255886764",
+      "creationTimestamp": "2014-10-25T17:39:56.219-07:00",
+      "name": "default-route-03d8a03a32937668",
+      "description": "Default route to the Internet.",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "destRange": "0.0.0.0/0",
+      "priority": 1000,
+      "nextHopGateway": "https://www.googleapis.com/compute/v1/projects/turnifi/global/gateways/default-internet-gateway"
+    },
+    {
+      "kind": "compute#route",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/routes/default-route-81c237a99097cdaa",
+      "id": "13195167013431411886",
+      "creationTimestamp": "2014-10-25T17:39:56.182-07:00",
+      "name": "default-route-81c237a99097cdaa",
+      "description": "Default route to the virtual network.",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "destRange": "10.240.0.0/16",
+      "priority": 1000,
+      "nextHopNetwork": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default"
+    },
+    {
+      "kind": "compute#route",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/routes/k8s-iprange-10-206-0-0",
+      "id": "874284341004112218",
+      "creationTimestamp": "2014-11-04T18:09:18.113-08:00",
+      "name": "k8s-iprange-10-206-0-0",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "tags": [
+        "us-central1-a-turb"
+      ],
+      "destRange": "10.0.0.0/32",
+      "priority": 1000,
+      "nextHopInstance": "https://www.googleapis.com/compute/v1/projects/turnifi/zones/us-central1-a/instances/turb",
+      "warnings": [
+        {
+          "code": "NEXT_HOP_INSTANCE_NOT_FOUND",
+          "message": "Next hop instance 'https://www.googleapis.com/compute/v1/projects/turnifi/zones/us-central1-a/instances/turb' does not exist.",
+          "data": [
+            {
+              "key": "instance",
+              "value": "https://www.googleapis.com/compute/v1/projects/turnifi/zones/us-central1-a/instances/turb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "compute#route",
+      "selfLink": "https://www.googleapis.com/compute/v1/projects/turnifi/global/routes/k8s-turb-node-1",
+      "id": "9020519928160969256",
+      "creationTimestamp": "2014-11-04T18:09:27.475-08:00",
+      "name": "k8s-turb-node-1",
+      "network": "https://www.googleapis.com/compute/v1/projects/turnifi/global/networks/default",
+      "destRange": "10.206.1.0/24",
+      "priority": 1000,
+      "nextHopInstance": "https://www.googleapis.com/compute/v1/projects/turnifi/zones/us-central1-a/instances/k8s-turb-node-1",
+      "warnings": [
+        {
+          "code": "NEXT_HOP_INSTANCE_NOT_FOUND",
+          "message": "Next hop instance 'https://www.googleapis.com/compute/v1/projects/turnifi/zones/us-central1-a/instances/k8s-turb-node-1' does not exist.",
+          "data": [
+            {
+              "key": "instance",
+              "value": "https://www.googleapis.com/compute/v1/projects/turnifi/zones/us-central1-a/instances/k8s-turb-node-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
