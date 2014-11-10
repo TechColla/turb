@@ -1,0 +1,4 @@
+---
+buildpack_path: /var/vcap/data/dea_next/admin_buildpacks/6ba25b1d-69d3-4a01-bc6c-d80a88227d73_78507b2578705f22a964df5879d4dbeba4016977
+detected_buildpack: SDK for Node.js(TM)
+start_command: node app.js
